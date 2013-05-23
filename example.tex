@@ -1,0 +1,197 @@
+\documentclass[handout,xcolor=pdftex,dvipsnames,table]{beamer}
+\usepackage{import}
+\usetheme{Amsterdam}
+
+
+\usepackage[dutch]{babel}
+
+\newcommand{\ntpar}{\par \vspace{1.3ex plus 0.3ex minus 0.3ex}}
+\newcommand{\nhpar}{\par \vspace{4.3ex plus 0.3ex minus 0.3ex}}
+\newcommand{\npar}{\par \vspace{2.3ex plus 0.3ex minus 0.3ex}}
+
+\title[]{Example Title}
+\subtitle{Example subtitle}
+\author{Jeroen Doggen}
+\institute{AP University College Antwerpen}
+\date{\today}
+
+\setbeamercolor{background canvas}{bg=}
+
+\begin{document}
+
+\maketitle
+
+\AtBeginSection[]  
+  {  
+    \begin{frame}<*>{beamer} 
+      \frametitle{Outline}
+      \tableofcontents[currentsection,currentsubsection]  
+    \end{frame}  
+  }
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<*><beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\section{A Section}
+
+\begin{frame} 
+\frametitle{Start}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{./placeholder.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame} 
+\frametitle{A New Slide}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{placeholder.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame} 
+\frametitle{An other Slide}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{An other Slide Again}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\section{An New Section}
+\begin{frame} 
+\frametitle{Start Again}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{An other Slide}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{The Last Slide of this section}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+
+\section{An New Section}
+\begin{frame} 
+\frametitle{Start Again}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{An other Slide}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{The Last Slide of this section}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\section{The last Section}
+\begin{frame} 
+\frametitle{Start Again}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{An other Slide}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{An other Slide Again}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{An other Slide}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{An other Slide Again}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+\end{itemize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{The Last Slide}
+\begin{itemize}[<+->]
+ \item Text
+ \item More text
+ \item More text again
+ \item The end!
+\end{itemize}
+\end{frame}
+
+\end{document}
