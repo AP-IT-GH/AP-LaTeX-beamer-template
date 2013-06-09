@@ -1,26 +1,27 @@
-\documentclass[handout,xcolor=pdftex,dvipsnames,table]{beamer}
-\usepackage{import}
-\usetheme{Amsterdam}
+% \documentclass[handout,xcolor=pdftex,dvipsnames,table]{beamer}
+\documentclass{beamer}
 
+\usetheme[framenumber]{AP}
 
-\usepackage[dutch]{babel}
+% Packages:
+% \usepackage{import}
+% \usepackage[dutch]{babel}
+\usepackage{lipsum}
 
-\newcommand{\ntpar}{\par \vspace{1.3ex plus 0.3ex minus 0.3ex}}
-\newcommand{\nhpar}{\par \vspace{4.3ex plus 0.3ex minus 0.3ex}}
-\newcommand{\npar}{\par \vspace{2.3ex plus 0.3ex minus 0.3ex}}
-
+% The title information
 \title[]{Example Title}
 \subtitle{Example subtitle}
 \author{Jeroen Doggen}
 \institute{AP University College Antwerpen}
-\date{\today}
+\date{Version: \today}
 
+% What is this for? (used when including existing pdf slides?)
 \setbeamercolor{background canvas}{bg=}
 
-\begin{document}
+% Remove the navigation symbols
+\beamertemplatenavigationsymbolsempty 
 
-\maketitle
-
+% Customise the outline pages
 \AtBeginSection[]  
   {  
     \begin{frame}<*>{beamer} 
@@ -31,167 +32,250 @@
 
 \AtBeginSubsection[]
 {
-  \begin{frame}<*><beamer>
+  \begin{frame}<*>{beamer} 
     \frametitle{Outline}
     \tableofcontents[currentsection,currentsubsection]
   \end{frame}
 }
 
-\section{A Section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
-\frametitle{Start}
-\begin{itemize}[<+->]
+\frametitle{The First Slide}
+\begin{itemize}
  \item Text
  \item More text
  \item More text again
 \end{itemize}
 \begin{center}
-  \includegraphics[width=0.4\textwidth]{./placeholder.jpg}
+  \includegraphics[width=0.4\textwidth]{images/placeholder.jpg}
 \end{center}
 \end{frame}
 
-\begin{frame} 
-\frametitle{A New Slide}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
-\begin{center}
-  \includegraphics[width=0.4\textwidth]{placeholder.jpg}
-\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{A Math Frame}
+  \begin{theorem}[Pythagoras]
+    The square of the hypotenuse of a \alert{right} triangle is equal to the sum of the squares on the other two sides:
+    \[
+    a^2 + b^2 = c^2.
+    \]
+    \[\frac{1}{\sigma}\]
+  \end{theorem}
+  \begin{proof}
+    Straightforward.
+  \end{proof}
 \end{frame}
 
-\begin{frame} 
-\frametitle{An other Slide}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Environments}
+  \begin{definition}
+    A \textbf{prime number} (or a prime) is a natural number which has exactly two distinct natural number divisors: 1 and itself. 
+  \end{definition}
+
+  \begin{exampleblock}{Example}
+    The first five prime numbers are $2$, $3$, $5$, $7$, and $11$.
+  \end{exampleblock}
+
+  \begin{alertblock}{Alert block}
+    Note that $1$ is not a prime number.
+  \end{alertblock}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{An other Slide Again}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
 
-\section{An New Section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{An Very Important Story}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame} 
 \frametitle{Start Again}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{How it began}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{An other Slide}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{A Lipsum Slide}
+  \lipsum[2]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Problems}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{An other Lipsum Slide}
+  \lipsum[2]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{A Lipsum Slide}
+  \lipsum[5]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{A Lipsum Slide}
+  \lipsum[4]
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Solutions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{The Last Slide of this section}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Some Interesting Facts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{An New Section}
 \begin{frame} 
 \frametitle{Start Again}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{An other Slide}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{The Last Slide of this section}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
 
-\section{The last Section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame} 
 \frametitle{Start Again}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{An other Slide}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{An other Slide Again}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{An other Slide}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{An other Slide Again}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \end{itemize}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame} 
 \frametitle{The Last Slide}
-\begin{itemize}[<+->]
- \item Text
- \item More text
- \item More text again
- \item The end!
-\end{itemize}
+  \begin{itemize}
+  \item Text
+  \item More text
+  \item More text again
+  \item The end!
+  \end{itemize}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

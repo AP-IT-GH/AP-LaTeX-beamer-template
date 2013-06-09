@@ -1,0 +1,63 @@
+% Copyright 2009 by Nico Schlömer
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+\mode<presentation>
+
+
+% =========================================================================
+% A good guess on what the AP colors could be.
+% \definecolor{APDarkOrange}{RGB}{101,98,99}
+% \definecolor{APLightOrange}{RGB}{196,1,9}
+
+\definecolor{APGrey}{RGB}{101,98,99}
+\definecolor{APLightGrey}{RGB}{201,198,199}
+\definecolor{APLighterGrey}{RGB}{221,218,219}
+\definecolor{APRed}{RGB}{196,1,9}
+
+\definecolor{APRed}{RGB}{187,0,17}
+
+
+% =========================================================================
+
+
+\setbeamercolor{structure}{fg=APGrey}
+\setbeamercolor{normal text}{fg=APGrey}
+\setbeamercolor{frametitle}{fg=APGrey}
+
+\setbeamercolor{frame number in foot}{fg=APGrey}
+
+\setbeamercolor{title}{fg=APGrey}
+\setbeamercolor{subtitle}{fg=APGrey} 
+\setbeamercolor{author}{fg=APGrey}
+
+
+\setbeamercolor{section in head/foot}{fg=APGrey}
+\setbeamercolor{subsection in head/foot}{fg=APGrey}
+
+\setbeamercolor{author in head/foot}{parent=section in head/foot}
+\setbeamercolor{title in head/foot}{parent=subsection in head/foot}
+
+
+% =======================================================================
+% alert color
+\setbeamercolor{alerted text}{fg=APRed}
+% =======================================================================
+
+% =======================================================================
+% blocks
+\setbeamercolor{block title}{use=structure,fg=white,bg=APRed}
+\setbeamercolor{block title example}{use=example text,fg=white,bg=APLightGrey}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=APRed}
+
+\setbeamercolor{block body}        {fg=APGrey,use=block title,bg=APLightGrey}
+\setbeamercolor{block body alerted}{fg=APGrey,use=block title alerted,bg=APLightGrey}
+\setbeamercolor{block body example}{fg=APGrey,use=block title example,bg=APLighterGrey}
+% =======================================================================
+
+
+\mode
+<all>

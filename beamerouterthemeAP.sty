@@ -1,0 +1,227 @@
+% Copyright 2013 by Jeroen Doggen 
+% Based on 'Artesis beamer template' Copyright 2010 by Maarten Weyn
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+% AP page geometry
+% \geometry{paperheight=7.5in,paperwidth=10.0in}
+% ... Hang on! As suggested in the manual, don't mess around with beamer's
+% assumed page dimensions (128mm x 96mm). Fonts, for example, do no get 
+% automatically scaled and will look tiny if the above is executed.
+% Instead, define a multiplicator 12.8/(10.0*2.54) = 64/127 and adjust all
+% respective lengths.
+
+
+% ----------------------------------------------------------------------------
+% *** required packages <<<
+% ----------------------------------------------------------------------------
+\RequirePackage{calc}
+\RequirePackage{ifthen}
+% ----------------------------------------------------------------------------
+% *** END required packages >>>
+% ----------------------------------------------------------------------------
+
+\mode<presentation>
+
+% ----------------------------------------------------------------------------
+% *** DEFINE LENGTHS <<<
+% ----------------------------------------------------------------------------
+\newlength{\margin}
+\setlength{\margin}{0.8832cm}% 0.69in* 64/127 *2.54cm/in
+
+\newlength{\ulogowidth}
+\setlength{\ulogowidth}{1.1136cm}% 0.87in* 64/127 *2.54cm/in
+\newlength{\ulogoheight}
+\setlength{\ulogoheight}{1cm}% 0.70364761837273193in* 64/127 *2.54cm/in
+\newlength{\ulogopadding}
+% padding = distance from the rightmost point of the logo to where the U starts;
+% value approximately \ulogowidth*0.25
+\setlength{\ulogopadding}{0.2784cm}
+
+% ----------------------------------------------------------------------------
+% *** END DEFINE LENGTHS >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** DEFINE IMAGES <<<
+% ----------------------------------------------------------------------------
+\pgfdeclareimage[width=2cm]{APLogo}{images/AP.png}
+
+\newlength{\titlepageLogoHeight}
+\setlength{\titlepageLogoHeight}{1.1cm}
+\pgfdeclareimage[height=\titlepageLogoHeight]{titlepageLogo}{images/AP.png}
+
+\pgfdeclareimage[width=\paperwidth]{APBackground}{images/titlepage.jpg}
+
+
+% ----------------------------------------------------------------------------
+% *** END DEFINE IMAGES <<<
+% ----------------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------------
+% *** HEADLINE <<<
+% ----------------------------------------------------------------------------
+\ifthenelse{\c@framenumber=1}
+{
+ % \defbeamertemplate*{headline}{AP theme}{}%
+}
+{  
+\newlength
+ {
+ \logotopmargin
+ }
+ \setlength{\logotopmargin}{0.204cm}    
+ \defbeamertemplate*{headline}{AP theme}%
+ {
+  \ifthenelse{ \c@framenumber=1 }
+    {
+      \vskip5cm% TODO: get rid of this quirk	  
+    }
+    {
+      \vskip\logotopmargin 
+      \hfill\pgfuseimage{APLogo}\hskip\margin
+    }
+  }
+}
+% ----------------------------------------------------------------------------
+% *** END HEADLINE <<<
+% ----------------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------------
+% *** FRAMETITLE <<<
+% ----------------------------------------------------------------------------
+\newlength\frametitletopmargin
+\setlength{\frametitletopmargin}{0.384cm}% 0.3in* 64/127 *2.54cm/in
+
+\defbeamertemplate*{frametitle}{AP theme}
+{  
+\nointerlineskip
+  \vskip-\ulogoheight
+  \vskip0.5cm
+  \vbox to \ulogoheight{
+	%\vfil
+	%\leftskip=\ulogowidth
+	%\advance\leftskip by\ulogopadding
+	% TODO: employ `leftskip` here, get rid of \hfill
+	\begin{beamercolorbox}{frame title}
+	%\hfill\insertframetitle\par
+	\insertframetitle\par
+	\end{beamercolorbox}
+	\vfil
+  }
+}
+% ----------------------------------------------------------------------------
+% *** END FRAMETITLE >>>
+% ----------------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------------
+% *** FOOTLINE <<<
+% ----------------------------------------------------------------------------
+% See the discussion above for the margin (pixel) quirks.
+\newlength{\textlogobottommarginDark}
+% actual bottom margin in the PowerPoint(R) theme: 7.5'' - 6.83'' - 0.36'' + 0.36'' * 2px/52px
+\setlength{\textlogobottommarginDark}{0.41452307692307688cm}% (7.5'' - 6.83'' - 0.36'' + 0.36'' * 2px/52px)* 64/127 *2.54cm/in
+\newcommand\uTextColorPosDark {\pgfpoint{\margin}{\textlogobottommarginDark}}
+
+%\newlength{\textlogobottommarginLight}
+% actual bottom margin in the PowerPoint(R) theme: 7.5'' - 6.80'' - 0.36'' + 0.36'' * 2px/52px
+%\setlength{\textlogobottommarginLight}{0.45292307692307715cm}% (7.5''-6.80''-0.36''+0.36''*2px/52px)* 64/127 *2.54cm/in
+%\newcommand\uTextColorPosLight{\pgfpoint{\margin}{\textlogobottommarginLight}}
+
+%\newlength{\logorightmargin}%
+%\setlength{\logorightmargin}{12.1344cm}% 9.48in* 64/127 *2.54cm/in
+%\newlength{\logobottommargin}%
+%\setlength{\logobottommargin}{0.512cm}% 0.4in* 64/127 *2.54cm/in
+%\newcommand\posUlogoFoot{\pgfpoint{\logorightmargin}{\logobottommargin}}
+
+%\newcommand{\uWavePos}{\pgfpoint{\paperwidth}{0cm}}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\defbeamertemplate*{footline}{Artesis}
+{%
+  
+  \ifthenelse{ \c@framenumber=1 }
+  % *** THEN ***
+  {%
+    \pgftext[left,bottom,at=\uTextColorPosDark]{\pgfuseimage{titlepageLogo}}
+  }
+  % *** ELSE ***
+  {%
+%     \hbox{
+%     \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=\margin,rightskip=.3cm plus1fill]{author in head/foot}%
+%       \usebeamerfont{title in head/foot}\inserttitle
+%      \end{beamercolorbox}%
+%   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+%     \usebeamerfont{title in head/foot}\insertshorttitle
+%   \end{beamercolorbox}}%
+%   \vskip0pt%
+  
+    \ifthenelse{\c@framenumber=1}
+    % then
+    {%
+        \pgftext[left,bottom,at=\titlepageLogoPosLight]{\pgfuseimage{titlepageLogo}}%
+    }%
+    % else
+    {}%
+    \ifbeamer@framenumber%
+      \ifnum\c@framenumber=1\else	  
+        \pgftext[right,bottom,at=\pgfpoint{0.99\paperwidth}{0.4ex}]{%
+          \usebeamerfont{frame number in foot}%
+          \usebeamercolor[fg]{frame number in foot}\insertframenumber{}/\inserttotalframenumber%
+        }%
+      \fi
+    \fi%
+    }
+}%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+% ----------------------------------------------------------------------------
+% *** END of FOOTLINE >>>
+% ---------------------------------------------------------------------------- 
+
+
+% ----------------------------------------------------------------------------
+% *** MARGINS <<<
+% ----------------------------------------------------------------------------
+% set left and right text margins
+\setbeamersize{text margin left=\margin,%
+               text margin right=\margin}
+% ----------------------------------------------------------------------------
+% *** END MARGINS >>>
+% ----------------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------------
+% *** BACKGROUND <<<
+% ----------------------------------------------------------------------------
+\defbeamertemplate*{background canvas}{AP theme}
+{%
+  \ifthenelse{ \c@framenumber=1 }
+  % *** THEN ***
+  {%
+    \ifnum\c@framenumber=1%
+      \pgfuseimage{APBackground}
+    \else%
+      \pgfuseimage{APBackground}%
+    \fi%
+  }
+  % *** ELSE ***
+  {}
+}
+% ----------------------------------------------------------------------------
+% *** END BACKGROUND <<<
+% ----------------------------------------------------------------------------
+
+\mode
+<all>
