@@ -1,5 +1,5 @@
-AP-Latex-beamer-template
-========================
+Latex beamer template for AP University College Antwerpen
+=========================================================
 
 LaTeX Beamer template for AP University College Antwerpen (AP Hogeschool Antwerpen)
 
