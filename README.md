@@ -1,9 +1,8 @@
-Latex beamer template for AP University College Antwerpen
-=========================================================
+AP LaTeX Beamer Template
+========================
+LaTeX Beamer template for AP University College Antwerpen (AP Hogeschool Antwerpen).
 
-LaTeX Beamer template for AP University College Antwerpen (AP Hogeschool Antwerpen)
-
-The template is loosely based on the official PowerPoint templates.
+The template is loosely based on the official PowerPoint template.
 
 License:
 --------
