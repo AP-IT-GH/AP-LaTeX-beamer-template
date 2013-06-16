@@ -32,6 +32,9 @@
 \newlength{\margin}
 \setlength{\margin}{0.8832cm}% 0.69in* 64/127 *2.54cm/in
 
+\newlength{\logomargin}
+\setlength{\logomargin}{0.2180cm}% 0.69in* 64/127 *2.54cm/in
+
 \newlength{\ulogowidth}
 \setlength{\ulogowidth}{1.1136cm}% 0.87in* 64/127 *2.54cm/in
 \newlength{\ulogoheight}
@@ -85,7 +88,7 @@
     }
     {
       \vskip\logotopmargin 
-      \hfill\pgfuseimage{APLogo}\hskip\margin
+      \hfill\pgfuseimage{APLogo}\hskip\logomargin
     }
   }
 }
