@@ -15,4 +15,12 @@ Example slides:
 
 ![A title page](screenshots/slide1.png?raw=true)
 
+### An outline slide:
+
+![An oultline slide](screenshots/slide2.png?raw=true)
+
+### A slide with some math:
+
+![A math slide](screenshots/slide3.png?raw=true)
+
 
