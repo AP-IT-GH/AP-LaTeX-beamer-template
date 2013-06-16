@@ -7,6 +7,7 @@ The template is loosely based on the official PowerPoint template.
 License:
 --------
 Copyright 2013 by Jeroen Doggen 
+
 Based on 'Artesis beamer template' Copyright 2010,2011 by Maarten Weyn & Jeroen Doggen
 
 These files may be distributed and/or modified
