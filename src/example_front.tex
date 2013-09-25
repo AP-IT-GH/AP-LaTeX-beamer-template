@@ -1,0 +1,53 @@
+\useoutertheme[height=0pt,width=60pt,right, font=1]{sidebar}
+\usetheme[framenumber,technologie]{AP}
+
+\makeatletter
+  \setbeamertemplate{sidebar \beamer@sidebarside}
+  {
+    \beamer@tempdim=\beamer@sidebarwidth
+    \advance\beamer@tempdim by -6pt
+    \insertverticalnavigation{\beamer@sidebarwidth}
+    \vfill
+    \ifx\beamer@sidebarside\beamer@lefttext
+    \else
+      \usebeamercolor{normal text}
+      \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}
+      \vskip2pt%
+    \fi
+}
+\makeatother
+
+% Packages:
+% \usepackage{import}
+% \usepackage[dutch]{babel}
+\usepackage{lipsum}
+
+% The title information
+\title[]{Example Title}
+\subtitle{Example subtitle}
+\author{Jeroen Doggen}
+\institute{AP University College Antwerpen}
+\date{Version: \today}
+
+% What is this for? (used when including existing pdf slides?)
+\setbeamercolor{background canvas}{bg=}
+
+% Remove the navigation symbols
+\beamertemplatenavigationsymbolsempty 
+
+% Show/repeat the outline page between each section/subsection
+\AtBeginSection[]  
+  {  
+    \begin{frame}<*>{beamer} 
+      \frametitle{Outline}
+      \tableofcontents[currentsection,currentsubsection]  
+    \end{frame}  
+  }
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<*>{beamer} 
+    \frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
