@@ -1,22 +1,6 @@
 \useoutertheme[height=0pt,width=60pt,right, font=1]{sidebar}
 \usetheme[framenumber,technologie]{AP}
 
-\makeatletter
-  \setbeamertemplate{sidebar \beamer@sidebarside}
-  {
-    \beamer@tempdim=\beamer@sidebarwidth
-    \advance\beamer@tempdim by -6pt
-    \insertverticalnavigation{\beamer@sidebarwidth}
-    \vfill
-    \ifx\beamer@sidebarside\beamer@lefttext
-    \else
-      \usebeamercolor{normal text}
-      \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}
-      \vskip2pt%
-    \fi
-}
-\makeatother
-
 % Packages:
 % \usepackage{import}
 % \usepackage[dutch]{babel}

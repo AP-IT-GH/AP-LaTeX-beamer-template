@@ -35,3 +35,29 @@
 
 \mode
 <all>
+
+%% Remove sidebar from first slide
+%% Don't put the author in the sidebar
+%% Not sure if it is ``recommended'' to put this here... but it works as espected.
+
+\makeatletter
+  \setbeamertemplate{sidebar \beamer@sidebarside}
+  {
+  \ifthenelse{\c@framenumber=1}
+    % then
+    {}
+    % else
+    {
+    \beamer@tempdim=\beamer@sidebarwidth
+    \advance\beamer@tempdim by -6pt
+    \insertverticalnavigation{\beamer@sidebarwidth}
+    \vfill
+    \ifx\beamer@sidebarside\beamer@lefttext
+    \else
+      \usebeamercolor{normal text}
+      \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}
+      \vskip2pt%
+    \fi
+    }
+}
+\makeatother
