@@ -52,13 +52,28 @@
 % ----------------------------------------------------------------------------
 % *** DEFINE IMAGES <<<
 % ----------------------------------------------------------------------------
-\pgfdeclareimage[width=2cm]{APLogo}{images/AP.png}
-
 \newlength{\titlepageLogoHeight}
 \setlength{\titlepageLogoHeight}{1.1cm}
-\pgfdeclareimage[height=\titlepageLogoHeight]{titlepageLogo}{images/AP.png}
 
-\pgfdeclareimage[width=\paperwidth]{APBackground}{images/titlepage.jpg}
+\newlength{\topLogoHeight}
+\setlength{\topLogoHeight}{1.1cm}
+
+\newlength{\APUAtopLogoHeight}
+\setlength{\APUAtopLogoHeight}{0.8cm}
+
+\ifbeamer@APUA
+  \pgfdeclareimage[height=\APUAtopLogoHeight]{APLogo}{logos/APUA_logo.png}
+\else
+  \pgfdeclareimage[height=\topLogoHeight]{APLogo}{logos/AP_logo_text.png}
+\fi
+
+\ifbeamer@APUA
+  \pgfdeclareimage[height=\titlepageLogoHeight]{titlepageLogo}{logos/APUA_logo_text.png}
+\else
+  \pgfdeclareimage[height=\titlepageLogoHeight]{titlepageLogo}{logos/AP_logo_text.png}
+\fi
+
+\pgfdeclareimage[width=\paperwidth]{APBackground}{logos/titlepage.jpg}
 
 
 % ----------------------------------------------------------------------------
