@@ -19,8 +19,6 @@ Example slides:
 
 ![An oultline slide](screenshots/slide2.png?raw=true)
 
-### A slide with some math:
+### A slide with an image:
 
 ![A math slide](screenshots/slide3.png?raw=true)
-
-
